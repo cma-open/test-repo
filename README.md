@@ -67,14 +67,18 @@ Here’s how the repositories are configured to work together:
 
 Add Repo B and Repo C as Submodules in Repo A:
 
+```bash
 cd path/to/repoA
 git submodule add git@yourcompany.com:username/repoB.git path/to/repoB
 git submodule add git@yourcompany.com:username/repoC.git path/to/repoC
 git submodule update --init --recursive
+```
 
 Within the checked out repo these settings can be confirmed in the following files. 
 
 ### Configuration Files:
+
+The .gitmodules file is commited to the repo.
 
 ```bash
 .gitmodules:
