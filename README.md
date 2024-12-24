@@ -65,7 +65,7 @@ This project uses Git submodules to link the main repository with the repositori
 containing the conda environment files and shell scripts.
 Here’s how the repositories are configured to work together:
 
-Add Repo B and Repo C as Submodules in Repo A:
+#### Add Repo B and Repo C as Submodules in Repo A:
 
 ```bash
 cd path/to/repoA
@@ -74,11 +74,18 @@ git submodule add git@yourcompany.com:username/repoC.git path/to/repoC
 git submodule update --init --recursive
 ```
 
-Within the checked out repo these settings can be confirmed in the following files. 
+#### Commit the .gitmodules File:
+
+```bash
+git add .gitmodules path/to/repoB path/to/repoC
+git commit -m "Add submodules for Repo B and Repo C"
+git push origin main
+```
 
 ### Configuration Files:
 
-The .gitmodules file is commited to the repo.
+Within the checked out repo these settings can be confirmed in the following files. 
+The .gitmodules file was previously  commited to the repo.
 
 ```bash
 .gitmodules:
@@ -178,4 +185,15 @@ git submodule update --init --recursive
 By following these steps, you can ensure that all repositories remain in sync and 
 that any changes made in one repository are properly reflected in the others.
 
+## Viewing Submodules on GitHub
+When you view Repo A on GitHub, you will see the submodule directories (Repo B, Repo C)
+listed as folders. However, you will not see the actual contents of these submodules 
+directly in Repo A. Instead, you will see a link to the submodule repository at 
+the specific commit that Repo A references.
 
+To view the contents of the submodules, you can:
+
+Navigate to the Submodule Directory: 
+Click on the submodule directory (e.g., path/to/repoB) in the GitHub interface.
+GitHub will display a link to the submodule repository at the specific commit. 
+Click on this link to view the contents of the submodule repository.
