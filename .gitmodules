@@ -1,0 +1,6 @@
+[submodule "envs"]
+	path = envs
+	url = https://github.com/cma-open/environment.git
+[submodule "scripts"]
+	path = scripts
+	url = https://github.com/cma-open/scripts.git
